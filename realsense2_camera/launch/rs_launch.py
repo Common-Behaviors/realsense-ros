@@ -21,7 +21,15 @@ from launch.actions import DeclareLaunchArgument, OpaqueFunction
 from launch.substitutions import LaunchConfiguration
 
 
-configurable_parameters = [{'name': 'camera_name',                  'default': 'camera', 'description': 'camera unique name'},
+configurable_parameters = [{'name': 'color_qos','default': 'SYSTEM_DEFAULT', 'description': 'QOS configuration for the color stream'},
+                           {'name': 'depth_qos','default': 'SYSTEM_DEFAULT', 'description': 'QOS configuration for the depth stream'},
+                           {'name': 'infra_qos','default': 'SYSTEM_DEFAULT', 'description': 'QOS configuration for the infra stream'},
+                           {'name': 'infra1_qos','default': 'SYSTEM_DEFAULT', 'description': 'QOS configuration for the inffra1 stream'},
+                           {'name': 'infra2_qos','default': 'SYSTEM_DEFAULT', 'description': 'QOS configuration for the infra2 stream'},
+                           {'name': '.camera.color.image_raw.format','default': 'jpeg', 'description': 'Compression Format for Image Raw'},
+                           {'name': '.camera.depth.image_rect_raw.format','default': 'jpeg', 'description': 'Compression Format for the Image Rect Raw'},
+                           {'name': '.camera.aligned_depth_to_color.image_raw.format','default': 'jpeg', 'description': 'Compression format for the Aligned Depth To Image'},
+                           {'name': 'camera_name',                  'default': 'camera', 'description': 'camera unique name'},
                            {'name': 'camera_namespace',             'default': 'camera', 'description': 'namespace for camera'},
                            {'name': 'serial_no',                    'default': "''", 'description': 'choose device by serial number'},
                            {'name': 'usb_port_id',                  'default': "''", 'description': 'choose device by usb port id'},
